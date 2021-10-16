@@ -1,0 +1,39 @@
+{
+  "name": "@ritani/to-simple-js",
+  "version": "1.0.7",
+  "description": "convert an object to javascript file that exports the object with simple commenting mechanism",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "stage_env=test mocha --reporter spec test/test-*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NEWECX/to-js.git"
+  },
+  "keywords": [
+    "generate",
+    "javascript",
+    "exports",
+    "simple",
+    "object",
+    "commenting"
+  ],
+  "author": "Sam Wen @ Ritani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NEWECX/to-simple-js/issues"
+  },
+  "homepage": "https://github.com/NEWECX/to-simple-js#readme",
+  "dependencies": {
+    "csvjson-json_beautifier": "^5.0.4"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.28.0",
+    "eslint-config-google": "^0.14.0",
+    "mocha": "^9.0.0"
+  }
+}
