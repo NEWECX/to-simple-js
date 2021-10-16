@@ -36,4 +36,19 @@ describe('Test commenting', () => {
         expect(result).equals('[\n/* start\n  {\n   x: 1\n  }\n*/\n]')
     });
 
+    it('test commenting 4', async () => {
+        const javascript = '[\n  {\n   x: 1\n  }\n]';
+        const comments = [{starting: '   x:', insert: '// insert comment line'}]
+        const result = commenting(javascript, comments);
+        //console.log(result);
+        expect(result).equals('[\n  {\n// insert comment line\n   x: 1\n  }\n]')
+    });
+
+    it('test commenting 5', async () => {
+        const javascript = '[\n  {\n   x: 1\n  }\n]';
+        const comments = [{starting: '   x:', append: '// append comment line'}]
+        const result = commenting(javascript, comments);
+        //console.log(result);
+        expect(result).equals('[\n  {\n   x: 1\n// append comment line\n  }\n]')
+    });
 });

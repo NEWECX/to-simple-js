@@ -15,19 +15,24 @@ function commenting(javascript, comments) {
             continue;
         }
         for (const comment of comments) {
-            const { starting, replacement, end } = comment;
+            const { starting, replacement, insert, append, end } = comment;
             if (typeof starting === 'number' && starting === i) {
                 lines[i] = replacement;
                 i++;
                 lines.splice(i, 0, line);
-                break;
             } else if (line.startsWith(starting)) {
-                if (end) {
+                if (insert) {
+                    lines[i] = insert;
+                    i++;
+                    lines.splice(i, 0, line);
+                } else if (append) {
+                    i++;
+                    lines.splice(i, 0, append);
+                } else if (end) {
                     lines[i] = replacement;
                     i++;
                     lines.splice(i, 0, line);
                     block = end;
-                    break;
                 } else {
                     lines[i] = line.replace(starting, replacement);
                 }
