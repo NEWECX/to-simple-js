@@ -1,6 +1,6 @@
 {
   "name": "@ritani/to-simple-js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "convert an object to javascript file that exports the object with simple commenting mechanism",
   "main": "src/index.js",
   "directories": {
